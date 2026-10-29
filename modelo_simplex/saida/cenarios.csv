@@ -1,0 +1,5 @@
+cenario,descricao,b_equipe,b_pipeline,b_revisao,x1,x2,Z,s1,s2,s3,delta_Z_vs_base,restricoes_ativas
+base,Cenário-base,40,24,20,20,20,200,0,4,0,0,R1_equipe;R3_revisao_humana
+equipe_41,Equipe: 40 -> 41 h; demais limites fixos,41,24,20,21,20,204,0,3,0,4,R1_equipe;R3_revisao_humana
+revisao_21,Revisão humana: 20 -> 21 h; demais limites fixos,40,24,21,19,21,202,0,5,0,2,R1_equipe;R3_revisao_humana
+pipeline_25,Pipeline: 24 -> 25 h; demais limites fixos,40,25,20,20,20,200,0,5,0,0,R1_equipe;R3_revisao_humana

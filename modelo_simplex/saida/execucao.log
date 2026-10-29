@@ -1,0 +1,65 @@
+Modelo: max Z = 4x1 + 6x2 | x1+x2<=40, x1<=24, x2<=20, x>=0
+
+== Cenário-base (b = [40, 24, 20])
+  Simplex: x* = (20, 20), Z* = 200, folgas (s1,s2,s3) = (0, 4, 0), preços-sombra = [4, 0, 2]
+  Vértices: melhor Z = 200 em (20, 20)
+  [OK]   base: solução viável
+  [OK]   base: x* = (20, 20)
+  [OK]   base: Z* = 200
+  [OK]   base: folgas = (0, 4, 0)
+  [OK]   base: enumeração de vértices confirma Z*
+  [OK]   base: linha Z sem coeficientes negativos (otimalidade)
+  [OK]   base: SciPy/HiGHS confirma (status 0)
+
+== Equipe: 40 -> 41 h; demais limites fixos (b = [41, 24, 20])
+  Simplex: x* = (21, 20), Z* = 204, folgas (s1,s2,s3) = (0, 3, 0), preços-sombra = [4, 0, 2]
+  Vértices: melhor Z = 204 em (21, 20)
+  [OK]   equipe_41: solução viável
+  [OK]   equipe_41: x* = (21, 20)
+  [OK]   equipe_41: Z* = 204
+  [OK]   equipe_41: enumeração de vértices confirma Z*
+  [OK]   equipe_41: linha Z sem coeficientes negativos (otimalidade)
+  [OK]   equipe_41: SciPy/HiGHS confirma (status 0)
+
+== Revisão humana: 20 -> 21 h; demais limites fixos (b = [40, 24, 21])
+  Simplex: x* = (19, 21), Z* = 202, folgas (s1,s2,s3) = (0, 5, 0), preços-sombra = [4, 0, 2]
+  Vértices: melhor Z = 202 em (19, 21)
+  [OK]   revisao_21: solução viável
+  [OK]   revisao_21: x* = (19, 21)
+  [OK]   revisao_21: Z* = 202
+  [OK]   revisao_21: enumeração de vértices confirma Z*
+  [OK]   revisao_21: linha Z sem coeficientes negativos (otimalidade)
+  [OK]   revisao_21: SciPy/HiGHS confirma (status 0)
+
+== Pipeline: 24 -> 25 h; demais limites fixos (b = [40, 25, 20])
+  Simplex: x* = (20, 20), Z* = 200, folgas (s1,s2,s3) = (0, 5, 0), preços-sombra = [4, 0, 2]
+  Vértices: melhor Z = 200 em (20, 20)
+  [OK]   pipeline_25: solução viável
+  [OK]   pipeline_25: x* = (20, 20)
+  [OK]   pipeline_25: Z* = 200
+  [OK]   pipeline_25: enumeração de vértices confirma Z*
+  [OK]   pipeline_25: linha Z sem coeficientes negativos (otimalidade)
+  [OK]   pipeline_25: SciPy/HiGHS confirma (status 0)
+
+== Comparação com os quadros do artigo
+  [OK]   Quadro inicial = Tabela 3
+  [OK]   Linha Z após 1ª iteração = [-4, 0, 0, 0, 6 | 120]
+  [OK]   Quadro ótimo = Tabela 4
+  [OK]   Duas iterações (entra x2/sai s3; entra x1/sai s1)
+
+== Pontos específicos do parecer
+  [OK]   (24, 20) é inviável (viola R1)
+  [OK]   (24, 16) é viável com Z = 192
+
+== Faixa de otimalidade dos coeficientes
+  (20, 20) é ótimo se e somente se 0 <= c1 <= c2 (único se 0 < c1 < c2)
+  [OK]   Condição analítica confirmada numericamente
+
+== Faixas das capacidades (base ótima mantida)
+  R1_equipe: [20, 44]  preço-sombra = 4
+  R2_pipeline_SAST: [20, None]  preço-sombra = 0
+  R3_revisao_humana: [16, 40]  preço-sombra = 2
+  [OK]   Preços-sombra (4, 0, 2) = ganhos marginais dos cenários de sensibilidade
+
+Saídas gravadas em: /home/germano/Documentos/edepa-devsecops-simplex/modelo_simplex/saida
+RESULTADO: todas as verificações passaram
