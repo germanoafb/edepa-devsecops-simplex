@@ -1,0 +1,62 @@
+{
+  "rotulo": "controle_sintetico",
+  "data_execucao_utc": "2026-10-29T22:54:43+00:00",
+  "bandit": "python3 -m bandit 1.9.4",
+  "python": "3.14.4",
+  "sistema": "Linux-7.0.0-38-generic-x86_64-desconhecido-with-glibc2.43",
+  "comando": "/usr/bin/python3 -m bandit -r /home/germano/Documentos/edepa-devsecops-simplex/bandit_reproducao/controle_sintetico -f json -o /home/germano/Documentos/edepa-devsecops-simplex/bandit_reproducao/saida/controle_sintetico/bandit_original.json",
+  "configuracao": "padrão (todos os testes; sem -l/-i; sem arquivo .bandit)",
+  "arquivos_analisados": [
+    {
+      "arquivo": "ctrl_1_sql.py",
+      "sha256": "d35b1f733540604b0f99e3a9188ffd07fdc8a5dcf24fbb96be068816fd4ef34f"
+    },
+    {
+      "arquivo": "ctrl_2_md5.py",
+      "sha256": "b8227ab43b8373a43caab3b75d5c971a0eea642b2d0161ae8374c8c6c9a882c0"
+    },
+    {
+      "arquivo": "ctrl_3_upload.py",
+      "sha256": "fc015ff61fb4459046244fbbeca8a6883c4f1d8364ead3a1cb69976398d86788"
+    },
+    {
+      "arquivo": "ctrl_4_ping.py",
+      "sha256": "8cb817236a2b769d35f7a23208bd2a794019de1194e53b740b1253dcbf34545a"
+    },
+    {
+      "arquivo": "ctrl_5_xml.py",
+      "sha256": "ae5b2108ac55e2ba8a2a3bf161a1322bfa5b174f3606f7d3a99c9cb46b4ea710"
+    }
+  ],
+  "denominadores": {
+    "trechos_analisados": 5,
+    "trechos_com_ao_menos_um_alerta": 4,
+    "proporcao_trechos_sinalizados": "4/5",
+    "total_de_alertas": 8,
+    "observacao": "Proporção de trechos SINALIZADOS automaticamente; não equivale a vulnerabilidades confirmadas."
+  },
+  "alertas_por_teste": {
+    "B608 hardcoded_sql_expressions (MEDIUM/LOW)": 1,
+    "B608 hardcoded_sql_expressions (MEDIUM/MEDIUM)": 1,
+    "B324 hashlib (HIGH/HIGH)": 1,
+    "B404 blacklist (LOW/HIGH)": 1,
+    "B602 subprocess_popen_with_shell_equals_true (HIGH/HIGH)": 1,
+    "B605 start_process_with_a_shell (HIGH/HIGH)": 1,
+    "B405 blacklist (LOW/HIGH)": 1,
+    "B314 blacklist (MEDIUM/HIGH)": 1
+  },
+  "metricas_bandit": {
+    "CONFIDENCE.HIGH": 6,
+    "CONFIDENCE.LOW": 1,
+    "CONFIDENCE.MEDIUM": 1,
+    "CONFIDENCE.UNDEFINED": 0,
+    "SEVERITY.HIGH": 3,
+    "SEVERITY.LOW": 2,
+    "SEVERITY.MEDIUM": 3,
+    "SEVERITY.UNDEFINED": 0,
+    "loc": 22,
+    "nosec": 0,
+    "skipped_tests": 0
+  },
+  "erros_bandit": []
+}

@@ -1,0 +1,21 @@
+arquivo,linha,teste_id,teste_nome,severidade,confianca,cwe_scanner,mensagem,codigo
+ctrl_1_sql.py,8,B608,hardcoded_sql_expressions,MEDIUM,LOW,CWE-89,Possible SQL injection vector through string-based query construction.,"7 def login_query_em_variavel(usuario, senha):
+8     q = ""SELECT * FROM usuarios WHERE nome='"" + usuario + ""' AND senha='"" + senha + ""'""
+9     return sqlite3.connect(""x.db"").execute(q).fetchone()"
+ctrl_1_sql.py,13,B608,hardcoded_sql_expressions,MEDIUM,MEDIUM,CWE-89,Possible SQL injection vector through string-based query construction.,"12 def login_query_no_execute(usuario):
+13     return sqlite3.connect(""x.db"").execute(""SELECT * FROM usuarios WHERE nome='%s'"" % usuario)"
+ctrl_2_md5.py,8,B324,hashlib,HIGH,HIGH,CWE-327,Use of weak MD5 hash for security. Consider usedforsecurity=False,"7 def hash_senha(senha):
+8     return hashlib.md5(senha.encode()).hexdigest()"
+ctrl_4_ping.py,5,B404,blacklist,LOW,HIGH,CWE-78,Consider possible security implications associated with the subprocess module.,"4 import os
+5 import subprocess
+6"
+ctrl_4_ping.py,9,B602,subprocess_popen_with_shell_equals_true,HIGH,HIGH,CWE-78,"subprocess call with shell=True identified, security issue.","8 def ping_subprocess(host):
+9     return subprocess.run(""ping -c 1 "" + host, shell=True)
+10"
+ctrl_4_ping.py,13,B605,start_process_with_a_shell,HIGH,HIGH,CWE-78,"Starting a process with a shell, possible injection detected, security issue.","12 def ping_os_system(host):
+13     return os.system(""ping -c 1 "" + host)"
+ctrl_5_xml.py,4,B405,blacklist,LOW,HIGH,CWE-20,"Using xml.etree.ElementTree to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.etree.ElementTree with the equivalent defusedxml package, or make sure defusedxml.defuse_stdlib() is called.","3 # do Bandit instalado. Não usar como evidência dos resultados da Tabela 2.
+4 import xml.etree.ElementTree as ET
+5"
+ctrl_5_xml.py,8,B314,blacklist,MEDIUM,HIGH,CWE-20,Using xml.etree.ElementTree.parse to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.etree.ElementTree.parse with its defusedxml equivalent function or make sure defusedxml.defuse_stdlib() is called,"7 def ler_config(caminho):
+8     return ET.parse(caminho).getroot()"
