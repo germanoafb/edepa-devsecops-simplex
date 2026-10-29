@@ -1,0 +1,4 @@
+# Todas opcionais; o script do modelo usa apenas a biblioteca padrão.
+bandit==1.9.4
+scipy>=1.11
+matplotlib>=3.8
