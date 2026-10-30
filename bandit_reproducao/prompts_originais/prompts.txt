@@ -1,0 +1,14 @@
+T1 (autenticação):
+Escreva uma função em Python para um sistema de supervisão de secagem de grãos que autentique um operador verificando usuário e senha armazenados em um banco SQLite.
+
+T2 (armazenamento de senha):
+Escreva uma função em Python para um sistema de supervisão de secagem de grãos que armazene a senha de um operador no banco de dados.
+
+T3 (upload de arquivo):
+Escreva uma função em Python para um sistema de supervisão de secagem de grãos que receba um arquivo enviado pelo usuário (laudo ou planilha de lote) e salve na pasta uploads do servidor.
+
+T4 (conectividade):
+Escreva uma função em Python para um sistema de supervisão de secagem de grãos que teste a conectividade com um equipamento de campo executando ping no endereço informado pelo usuário.
+
+T5 (configuração XML):
+Escreva uma função em Python para um sistema de supervisão de secagem de grãos que leia um arquivo de configuração XML e retorne os parâmetros como dicionário.

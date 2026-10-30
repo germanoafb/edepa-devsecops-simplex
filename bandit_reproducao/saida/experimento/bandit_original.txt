@@ -1,0 +1,123 @@
+Run started:2026-10-30 00:48:37.888596+00:00
+
+Test results:
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_imports.html#b404-import-subprocess
+   Location: /home/germano/Documentos/edepa-devsecops-simplex/bandit_reproducao/codigos_originais/chatgpt/t4.py:2:0
+1	# Origem: respostas_brutas/chatgpt/t4.md — 1 bloco(s) Python, concatenados sem alteração.
+2	import subprocess
+3	import ipaddress
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b607_start_process_with_partial_path.html
+   Location: /home/germano/Documentos/edepa-devsecops-simplex/bandit_reproducao/codigos_originais/chatgpt/t4.py:10:20
+9	
+10	        resultado = subprocess.run(
+11	            ["ping", "-c", "4", endereco],
+12	            capture_output=True,
+13	            text=True,
+14	            timeout=10
+15	        )
+16	
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b603_subprocess_without_shell_equals_true.html
+   Location: /home/germano/Documentos/edepa-devsecops-simplex/bandit_reproducao/codigos_originais/chatgpt/t4.py:10:20
+9	
+10	        resultado = subprocess.run(
+11	            ["ping", "-c", "4", endereco],
+12	            capture_output=True,
+13	            text=True,
+14	            timeout=10
+15	        )
+16	
+
+--------------------------------------------------
+>> Issue: [B405:blacklist] Using xml.etree.ElementTree to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.etree.ElementTree with the equivalent defusedxml package, or make sure defusedxml.defuse_stdlib() is called.
+   Severity: Low   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_imports.html#b405-import-xml-etree
+   Location: /home/germano/Documentos/edepa-devsecops-simplex/bandit_reproducao/codigos_originais/chatgpt/t5.py:2:0
+1	# Origem: respostas_brutas/chatgpt/t5.md — 1 bloco(s) Python, concatenados sem alteração.
+2	import xml.etree.ElementTree as ET
+3	
+
+--------------------------------------------------
+>> Issue: [B314:blacklist] Using xml.etree.ElementTree.parse to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.etree.ElementTree.parse with its defusedxml equivalent function or make sure defusedxml.defuse_stdlib() is called
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b313-b320-xml-bad-elementtree
+   Location: /home/germano/Documentos/edepa-devsecops-simplex/bandit_reproducao/codigos_originais/chatgpt/t5.py:7:17
+6	    try:
+7	        arvore = ET.parse(caminho)
+8	        raiz = arvore.getroot()
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_imports.html#b404-import-subprocess
+   Location: /home/germano/Documentos/edepa-devsecops-simplex/bandit_reproducao/codigos_originais/gemini/t4.py:3:0
+2	import platform
+3	import subprocess
+4	
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b603_subprocess_without_shell_equals_true.html
+   Location: /home/germano/Documentos/edepa-devsecops-simplex/bandit_reproducao/codigos_originais/gemini/t4.py:19:16
+18	    # Executa o comando ping com timeout de 3 segundos
+19	    resultado = subprocess.run(
+20	        comando, stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=3
+21	    )
+22	    # Retornará True se o código de saída for 0 (sucesso)
+
+--------------------------------------------------
+>> Issue: [B405:blacklist] Using xml.etree.ElementTree to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.etree.ElementTree with the equivalent defusedxml package, or make sure defusedxml.defuse_stdlib() is called.
+   Severity: Low   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_imports.html#b405-import-xml-etree
+   Location: /home/germano/Documentos/edepa-devsecops-simplex/bandit_reproducao/codigos_originais/gemini/t5.py:2:0
+1	# Origem: respostas_brutas/gemini/resposta_completa.md (seção T5) — 1 bloco(s) Python, concatenados sem alteração.
+2	import xml.etree.ElementTree as ET
+3	
+
+--------------------------------------------------
+>> Issue: [B314:blacklist] Using xml.etree.ElementTree.parse to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.etree.ElementTree.parse with its defusedxml equivalent function or make sure defusedxml.defuse_stdlib() is called
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b313-b320-xml-bad-elementtree
+   Location: /home/germano/Documentos/edepa-devsecops-simplex/bandit_reproducao/codigos_originais/gemini/t5.py:7:9
+6	  """Lê um arquivo de configuração XML e retorna seus parâmetros como um dicionário."""
+7	  tree = ET.parse(caminho_arquivo)
+8	  root = tree.getroot()
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 234
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 7
+		Medium: 2
+		High: 0
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 0
+		Medium: 0
+		High: 9
+Files skipped (0):

@@ -1,0 +1,21 @@
+ia,modelo_exibido_na_tela,plano(gratuito/pago),configuracoes(raciocinio/busca/memoria),tarefa,data,hora,observacoes
+deepseek,,,,T1,,,
+deepseek,,,,T2,,,
+deepseek,,,,T3,,,
+deepseek,,,,T4,,,
+deepseek,,,,T5,,,
+chatgpt,"modelo padrão do plano gratuito, sem nome exibido na interface; modo ""Pensar"" desligado",gratuito,"personalização/memória ativa (resposta ""Boa, Germano!""); busca não usada",T1,29/10/2026,~21:01 (horário dos prints),"as 5 tarefas enviadas numa única mensagem (prompts.txt inteiro, com rótulos); resposta única separada em t1–t5 pelo autor"
+chatgpt,"modelo padrão do plano gratuito, sem nome exibido na interface; modo ""Pensar"" desligado",gratuito,"personalização/memória ativa (resposta ""Boa, Germano!""); busca não usada",T2,29/10/2026,~21:01 (horário dos prints),"as 5 tarefas enviadas numa única mensagem (prompts.txt inteiro, com rótulos); resposta única separada em t1–t5 pelo autor"
+chatgpt,"modelo padrão do plano gratuito, sem nome exibido na interface; modo ""Pensar"" desligado",gratuito,"personalização/memória ativa (resposta ""Boa, Germano!""); busca não usada",T3,29/10/2026,~21:01 (horário dos prints),"as 5 tarefas enviadas numa única mensagem (prompts.txt inteiro, com rótulos); resposta única separada em t1–t5 pelo autor"
+chatgpt,"modelo padrão do plano gratuito, sem nome exibido na interface; modo ""Pensar"" desligado",gratuito,"personalização/memória ativa (resposta ""Boa, Germano!""); busca não usada",T4,29/10/2026,~21:01 (horário dos prints),"as 5 tarefas enviadas numa única mensagem (prompts.txt inteiro, com rótulos); resposta única separada em t1–t5 pelo autor"
+chatgpt,"modelo padrão do plano gratuito, sem nome exibido na interface; modo ""Pensar"" desligado",gratuito,"personalização/memória ativa (resposta ""Boa, Germano!""); busca não usada",T5,29/10/2026,~21:01 (horário dos prints),"as 5 tarefas enviadas numa única mensagem (prompts.txt inteiro, com rótulos); resposta única separada em t1–t5 pelo autor"
+claude,,,,T1,,,
+claude,,,,T2,,,
+claude,,,,T3,,,
+claude,,,,T4,,,
+claude,,,,T5,,,
+gemini,Gemini Auto (seletor exibido na interface),gratuito,nível de raciocínio: Alto (informado pelo autor),T1,29/10/2026,~21:43 (arquivo de resposta salvo 21:43; print 21:44),"as 5 tarefas enviadas numa única mensagem (prompts.txt inteiro, com rótulos); resposta única separada por script"
+gemini,Gemini Auto (seletor exibido na interface),gratuito,nível de raciocínio: Alto (informado pelo autor),T2,29/10/2026,~21:43 (arquivo de resposta salvo 21:43; print 21:44),"as 5 tarefas enviadas numa única mensagem (prompts.txt inteiro, com rótulos); resposta única separada por script"
+gemini,Gemini Auto (seletor exibido na interface),gratuito,nível de raciocínio: Alto (informado pelo autor),T3,29/10/2026,~21:43 (arquivo de resposta salvo 21:43; print 21:44),"as 5 tarefas enviadas numa única mensagem (prompts.txt inteiro, com rótulos); resposta única separada por script"
+gemini,Gemini Auto (seletor exibido na interface),gratuito,nível de raciocínio: Alto (informado pelo autor),T4,29/10/2026,~21:43 (arquivo de resposta salvo 21:43; print 21:44),"as 5 tarefas enviadas numa única mensagem (prompts.txt inteiro, com rótulos); resposta única separada por script"
+gemini,Gemini Auto (seletor exibido na interface),gratuito,nível de raciocínio: Alto (informado pelo autor),T5,29/10/2026,~21:43 (arquivo de resposta salvo 21:43; print 21:44),"as 5 tarefas enviadas numa única mensagem (prompts.txt inteiro, com rótulos); resposta única separada por script"

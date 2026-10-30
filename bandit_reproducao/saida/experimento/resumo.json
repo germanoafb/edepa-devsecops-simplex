@@ -1,0 +1,79 @@
+{
+  "rotulo": "experimento",
+  "data_execucao_utc": "2026-10-30T00:48:37+00:00",
+  "bandit": "python3 -m bandit 1.9.4",
+  "python": "3.14.4",
+  "sistema": "Linux-7.0.0-38-generic-x86_64-desconhecido-with-glibc2.43",
+  "comando": "/usr/bin/python3 -m bandit -r /home/germano/Documentos/edepa-devsecops-simplex/bandit_reproducao/codigos_originais -f json -o /home/germano/Documentos/edepa-devsecops-simplex/bandit_reproducao/saida/experimento/bandit_original.json",
+  "configuracao": "padrão (todos os testes; sem -l/-i; sem arquivo .bandit)",
+  "arquivos_analisados": [
+    {
+      "arquivo": "chatgpt/t1.py",
+      "sha256": "381ac28643c11273e36bc52fd8ecd16427a8723871730f80bef1c0bfa186532d"
+    },
+    {
+      "arquivo": "chatgpt/t2.py",
+      "sha256": "1d361f8570bd31c3e3ebaa42a3fed4d7ba9caae599ddbe34a08ee8526cf552ff"
+    },
+    {
+      "arquivo": "chatgpt/t3.py",
+      "sha256": "b20e1588aed5daf1a9f40bacfba18216d30b1a0080857ca8363964b483ee72a8"
+    },
+    {
+      "arquivo": "chatgpt/t4.py",
+      "sha256": "3c318afd15b3bc4918761ae370e7e7a93ea72106d3f2b9399ac2d8264b533dc3"
+    },
+    {
+      "arquivo": "chatgpt/t5.py",
+      "sha256": "014f14230d02a3f11684bc167cc8ae49d351b48f304170dae00e372072da7d4c"
+    },
+    {
+      "arquivo": "gemini/t1.py",
+      "sha256": "5e5bca8cc6b521d1ffc99cb85e33b0b532b34cf42922acdd73fcb03a72859718"
+    },
+    {
+      "arquivo": "gemini/t2.py",
+      "sha256": "d7d2b5f0dc411f1daead7a5249e747482b24b49f32e5d8094d2b820466bf6724"
+    },
+    {
+      "arquivo": "gemini/t3.py",
+      "sha256": "d2ecec8977d4a4dc212d601afedcf1eec14183e3a0f48ccae3a18acc89847223"
+    },
+    {
+      "arquivo": "gemini/t4.py",
+      "sha256": "18fc857ddc2b44405e4cf8f69773e9bed6adbf2e21e4b637560ea6eda959b990"
+    },
+    {
+      "arquivo": "gemini/t5.py",
+      "sha256": "f7db2077599a2bde61d598bfdab61416742bb0e02ab601ac1d61a0faa6026caf"
+    }
+  ],
+  "denominadores": {
+    "trechos_analisados": 10,
+    "trechos_com_ao_menos_um_alerta": 4,
+    "proporcao_trechos_sinalizados": "4/10",
+    "total_de_alertas": 9,
+    "observacao": "Proporção de trechos SINALIZADOS automaticamente; não equivale a vulnerabilidades confirmadas."
+  },
+  "alertas_por_teste": {
+    "B404 blacklist (LOW/HIGH)": 2,
+    "B607 start_process_with_partial_path (LOW/HIGH)": 1,
+    "B603 subprocess_without_shell_equals_true (LOW/HIGH)": 2,
+    "B405 blacklist (LOW/HIGH)": 2,
+    "B314 blacklist (MEDIUM/HIGH)": 2
+  },
+  "metricas_bandit": {
+    "CONFIDENCE.HIGH": 9,
+    "CONFIDENCE.LOW": 0,
+    "CONFIDENCE.MEDIUM": 0,
+    "CONFIDENCE.UNDEFINED": 0,
+    "SEVERITY.HIGH": 0,
+    "SEVERITY.LOW": 7,
+    "SEVERITY.MEDIUM": 2,
+    "SEVERITY.UNDEFINED": 0,
+    "loc": 234,
+    "nosec": 0,
+    "skipped_tests": 0
+  },
+  "erros_bandit": []
+}
