@@ -46,9 +46,30 @@ Os três resultados coincidem com os do parecer.
 
 ## 4.2 Bandit: `bandit_reproducao/executar_bandit.py`
 
-### Experimento original: **não executado**
+### Experimento (executado em 29–30/10/2026)
 
-Os códigos originais não estavam nos arquivos recebidos. O script recusa-se a rodar com o diretório vazio (`codigos_originais/`). Nenhum resultado do experimento original foi produzido nem inferido.
+O ensaio original **não havia sido executado** e foi refeito. Procedimento: `prompts_originais/prompts.txt` enviado inteiro, numa única mensagem e em conversa nova, a três assistentes; primeira resposta usada; respostas salvas sem edição em `respostas_brutas/`; código extraído por `extrair_codigo.py` (no caso do Claude, que gerou um módulo único, a recomposição dos trechos é idêntica ao original, exceto por linhas em branco nos cortes); Bandit 1.9.4 com a configuração padrão.
+
+| Assistente | Condições (ver `registro_geracao.csv`) |
+|---|---|
+| ChatGPT | gratuito, modelo padrão sem nome exibido, "Pensar" desligado, memória/personalização ativa |
+| Gemini | gratuito, "Gemini Auto", raciocínio Alto |
+| Claude | Pro, Opus 5.5, esforço Medium, execução de código ativa |
+
+**Resultado por tarefa (15 trechos):** 5/15 sinalizados e 11 alertas: 0 de severidade alta, 2 de média (B314) e 9 de baixa. O `comum.py` do Claude contém só o `import subprocess`, usado apenas em T4, e por isso foi atribuído a T4. Contando por arquivo, o script relata 6/16.
+
+| | ChatGPT | Gemini | Claude |
+|---|---|---|---|
+| Tarefas sinalizadas | T4, T5 | T4, T5 | T4 |
+| Alertas | 5 | 4 | 2 |
+| Falsos positivos | 3 | 1 | 2 |
+| Riscos não confirmados | 2 | 3 | 0 |
+| Vulnerabilidades confirmadas | 0 | 0 | 0 |
+| Fragilidades encontradas só na revisão manual | 0 | 4 (CWE-208, CWE-916 ×2, CWE-434) | 0 |
+
+Detalhes por alerta: `saida/experimento/alertas.csv` e `classificacao_manual.csv` (aprovada pelo autor).
+
+**Tentativa descartada:** a geração do Claude por um subagente do Claude Code foi descartada antes da análise, porque o subagente tinha contexto do repositório e mencionou o Bandit na resposta (contaminação). Nada dela foi salvo nem usado.
 
 ### Controle sintético (somente para conferir o mapeamento da ferramenta)
 
@@ -70,11 +91,11 @@ Resultado: 4/5 trechos de controle sinalizados e 8 alertas.
 
 **O que isso permite afirmar:** as classificações da Tabela 2 original (Média/Baixa em SQL; Alta/Alta em MD5 e em comando; CWE-20 em XML; nenhum alerta no upload) são **compatíveis** com o comportamento do Bandit 1.9.4. "Baixa-Média / Alta" no XML é compatível com dois alertas distintos (B405 + B314). Ambiente: expat 2.7.4.
 
-**O que isso NÃO permite afirmar:** que o código original produziu esses alertas exatos. Isso depende do relatório original (pendência A8).
+**O que isso NÃO permite afirmar:** nada sobre o experimento; os controles servem só para conferir o mapeamento da ferramenta.
 
 ## 4.3 Como apresentar no artigo
 
 O artigo já traz a Tabela 5 (saída do script) e cita o repositório. Depois do *push*, sugere-se:
 
 1. manter o JSON e o CSV de `modelo_simplex/saida/` no repositório;
-2. quando os códigos originais estiverem disponíveis, rodar `executar_bandit.py`, substituir a coluna 3 da Tabela 2 pelos IDs e linhas reais e atualizar a coluna 4 com a classificação humana preenchida.
+2. a Tabela 2 do artigo já traz os alertas reais e a classificação humana de cada tarefa e assistente.

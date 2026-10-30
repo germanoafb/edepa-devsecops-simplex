@@ -1,6 +1,6 @@
 {
   "rotulo": "experimento",
-  "data_execucao_utc": "2026-10-30T00:48:37+00:00",
+  "data_execucao_utc": "2026-10-30T23:09:30+00:00",
   "bandit": "python3 -m bandit 1.9.4",
   "python": "3.14.4",
   "sistema": "Linux-7.0.0-38-generic-x86_64-desconhecido-with-glibc2.43",
@@ -28,6 +28,30 @@
       "sha256": "014f14230d02a3f11684bc167cc8ae49d351b48f304170dae00e372072da7d4c"
     },
     {
+      "arquivo": "claude/comum.py",
+      "sha256": "5b8b3e35a6950b956aca26d159aa2e016c68d928bd5ccec9a45c621f685dbf96"
+    },
+    {
+      "arquivo": "claude/t1.py",
+      "sha256": "23a64e02bf4d389513ee06b73169e9442befcf4079b4a10aaf514b12c384835c"
+    },
+    {
+      "arquivo": "claude/t2.py",
+      "sha256": "789e9eadd6d107fa18d7c150ae65466633828c19766c68375b451e95dcac25a5"
+    },
+    {
+      "arquivo": "claude/t3.py",
+      "sha256": "fdbf7240b26d86f7102ecad2194c749a98e1795320d5fc756b6463836828ee90"
+    },
+    {
+      "arquivo": "claude/t4.py",
+      "sha256": "a943caf4f17b29253046a729e7f0da5bf6991bf9a23c050e2345325c7b0cb11c"
+    },
+    {
+      "arquivo": "claude/t5.py",
+      "sha256": "5852d8f661679939cd998c6d6e3292fa47f486cbcc099eabb07f8de3749d0d6d"
+    },
+    {
       "arquivo": "gemini/t1.py",
       "sha256": "5e5bca8cc6b521d1ffc99cb85e33b0b532b34cf42922acdd73fcb03a72859718"
     },
@@ -49,29 +73,29 @@
     }
   ],
   "denominadores": {
-    "trechos_analisados": 10,
-    "trechos_com_ao_menos_um_alerta": 4,
-    "proporcao_trechos_sinalizados": "4/10",
-    "total_de_alertas": 9,
+    "trechos_analisados": 16,
+    "trechos_com_ao_menos_um_alerta": 6,
+    "proporcao_trechos_sinalizados": "6/16",
+    "total_de_alertas": 11,
     "observacao": "Proporção de trechos SINALIZADOS automaticamente; não equivale a vulnerabilidades confirmadas."
   },
   "alertas_por_teste": {
-    "B404 blacklist (LOW/HIGH)": 2,
+    "B404 blacklist (LOW/HIGH)": 3,
     "B607 start_process_with_partial_path (LOW/HIGH)": 1,
-    "B603 subprocess_without_shell_equals_true (LOW/HIGH)": 2,
+    "B603 subprocess_without_shell_equals_true (LOW/HIGH)": 3,
     "B405 blacklist (LOW/HIGH)": 2,
     "B314 blacklist (MEDIUM/HIGH)": 2
   },
   "metricas_bandit": {
-    "CONFIDENCE.HIGH": 9,
+    "CONFIDENCE.HIGH": 11,
     "CONFIDENCE.LOW": 0,
     "CONFIDENCE.MEDIUM": 0,
     "CONFIDENCE.UNDEFINED": 0,
     "SEVERITY.HIGH": 0,
-    "SEVERITY.LOW": 7,
+    "SEVERITY.LOW": 9,
     "SEVERITY.MEDIUM": 2,
     "SEVERITY.UNDEFINED": 0,
-    "loc": 234,
+    "loc": 468,
     "nosec": 0,
     "skipped_tests": 0
   },

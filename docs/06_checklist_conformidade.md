@@ -6,9 +6,9 @@
 |---|---|
 | 1. Delimitar caso (sistema, componentes, tarefas, riscos) e encurtar o título | ✅ feito; ❓ o autor deve validar o cenário (D1) |
 | 2. Parâmetros auditáveis ou cenário hipotético declarado; recursos humanos × computacionais | ✅ declarado hipotético; unidades explicitadas; ❓ confirmar a interpretação de x₁ (D2) |
-| 3. Evidências: códigos, prompts, gerador, ambiente, comandos, saídas; confirmação; separação automático/manual/mitigação | ⚠️ separação conceitual feita no texto e procedimento pronto; **artefatos originais pendentes (A1–A11)** |
+| 3. Evidências: códigos, prompts, gerador, ambiente, comandos, saídas; confirmação; separação automático/manual/mitigação | ✅ ensaio refeito com 15 trechos; todos os artefatos no repositório; classificação aprovada |
 | 4. Rodar o modelo; entrada, status, solução, Z, folgas; comparar com os tableaux; cenários | ✅ script com 33 verificações aprovadas; Tabela 5 |
-| 5. Corpus, períodos, seleção, referências, nomenclatura; modelo oficial; PDF | ✅ corpus 11, 2019–2026, critérios C1–C3, referências auditadas, nomenclatura completa, modelo oficial; ❓ datas e strings de busca (B1–B3); ❓ exportar o PDF (D5) |
+| 5. Corpus, períodos, seleção, referências, nomenclatura; modelo oficial; PDF | ✅ corpus 11, 2019–2026, critérios C1–C3, referências auditadas, nomenclatura completa, modelo oficial; busca declarada como narrativa, sem registros; ❓ exportar o PDF |
 
 ## 6.2 Normas EDEPA 2026
 
@@ -17,7 +17,7 @@ Fontes: página oficial (`uniube.br/eventos/edepa/`) e arquivo-modelo `modelo-do
 | Regra | Fonte | Situação |
 |---|---|---|
 | Português, inglês ou espanhol | site | ✅ português |
-| Até 12 páginas, com referências | site | ✅ 10 páginas na prévia do LibreOffice; ❓ conferir no Word, porque a paginação pode variar |
+| Até 12 páginas, com referências | site | ✅ 11 páginas na prévia do LibreOffice; ❓ conferir no Word, porque a paginação pode variar |
 | PDF, A4, Times New Roman 12 | site | ✅ A4 e TNR 12 no texto; ❓ PDF a exportar. Tabelas e as notas "Fonte:" estão em TNR 10, como no original, que não foi descontado. A regra geral do modelo diz "TNR 12 para todo trabalho": se quiser aderência literal, passe as tabelas para 12 (o artigo deve continuar abaixo de 12 páginas) |
 | Nome do arquivo = nome completo do 1º autor | site | ❓ salvar como `Germano Augusto Freitas Barbosa.pdf` |
 | Resumo ≤ 200 palavras, na mesma linha após "RESUMO" sublinhado e traço; recuo de 1 cm | site + modelo | ✅ 199 palavras; formatação do modelo |
@@ -43,7 +43,7 @@ Fontes: página oficial (`uniube.br/eventos/edepa/`) e arquivo-modelo `modelo-do
 
 ## 6.4 Antes de submeter (até 02/11/2026)
 
-1. Preencher ou resolver todos os campos **amarelos**, depois remover o realce.
+1. Não há mais campos amarelos.
 2. Abrir no Word e conferir quebras de tabela e figura e o total de páginas (≤ 12).
 3. Fazer *commit* e *push* do repositório citado no artigo.
 4. Exportar o PDF como `Germano Augusto Freitas Barbosa.pdf`.

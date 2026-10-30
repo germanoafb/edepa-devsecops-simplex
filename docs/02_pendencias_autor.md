@@ -1,57 +1,31 @@
-# 2. Informações e evidências que o autor precisa fornecer
+# 2. Pendências do autor
 
-No DOCX revisado, cada pendência aparece **destacada em amarelo**. Nada foi inventado: quando um dado não existia nos arquivos recebidos, ficou um campo em aberto.
+**Situação em 30/10/2026:** todas as pendências de conteúdo foram resolvidas. O DOCX não tem mais campos amarelos. Faltam só as etapas finais de submissão.
 
-**Prazo:** a submissão no EDEPA 2026 vai até **02/11/2026** (fonte: página oficial do evento, consultada em 29/10/2026).
+## Resolvidas
 
-## A. Ensaio com geração de código (bloqueia a reprodutibilidade, item 12 da matriz)
-
-| # | Material | Onde entra | Formato sugerido |
-|---|---|---|---|
-| A1 | Nome e versão exatos do modelo/assistente (ex.: produto, modelo, versão ou data do modelo) | Métodos, "Ensaio exploratório" | texto |
-| A2 | Data (ou datas) da geração dos códigos | idem | dd/mm/aaaa |
-| A3 | Parâmetros de geração disponíveis (temperatura, interface web ou API, contexto) e número de gerações por prompt | idem | texto; "não disponível" se for o caso |
-| A4 | Os **cinco prompts completos**, exatamente como enviados | repositório: `bandit_reproducao/prompts_originais/` | um arquivo `.txt` por prompt (`p1_autenticacao.txt`, ...) |
-| A5 | Os **cinco códigos gerados**, sem edição, cada um correspondente ao seu prompt | repositório: `bandit_reproducao/codigos_originais/` | um `.py` por trecho, com o mesmo prefixo do prompt |
-| A6 | Versão do Python usada na análise original | Métodos | `python --version` |
-| A7 | Comando e configuração do Bandit (flags, arquivo `.bandit`, filtros `-l`/`-i`) | Métodos | texto |
-| A8 | Relatório original do Bandit (saída de console, JSON ou TXT) | repositório e Tabela 2 (coluna 3) | arquivo bruto |
-| A9 | Registro da revisão manual: quem revisou, quais trechos (os cinco ou só o de upload?), critério e justificativa de cada classificação | Métodos, Tabela 2 (coluna 4) | preencher `classificacao_manual.csv` gerado pelo script |
-| A10 | Para os trechos 1 e 4: de onde vêm o usuário e o host (entrada externa?) | Tabela 2 | trecho de código |
-| A11 | Para o trecho 5: biblioteca XML usada (xml.etree? lxml?) e versão do Expat (`python -c "import pyexpat; print(pyexpat.EXPAT_VERSION)"`) | Tabela 2 | texto |
-
-Se os prompts e códigos originais **não existirem mais**, não regenere nada com a mesma descrição como se fosse o original. Nesse caso há duas opções honestas: (a) declarar no texto que os artefatos não foram preservados, como limitação; ou (b) refazer o ensaio por completo, com nova data e novo modelo, e reportar os **novos** resultados, que podem diferir de 4/5.
-
-**Como reproduzir quando os arquivos estiverem disponíveis:**
-
-```bash
-python3 bandit_reproducao/executar_bandit.py bandit_reproducao/codigos_originais --rotulo experimento
-```
-
-## B. Revisão da literatura (item 16)
-
-| # | Material |
+| Pendência original | Como foi resolvida |
 |---|---|
-| B1 | Datas das buscas em cada base |
-| B2 | Expressões exatas (strings) usadas em cada base |
-| B3 | Número de registros recuperados, triados e incluídos (se registrados). Se não houver registros, substitua o campo amarelo por: "Os quantitativos de cada etapa não foram registrados, o que limita a reprodutibilidade da seleção." |
-| B4 | Confirmar que o corpus tem **11** documentos. Se havia um 12º estudo, identificá-lo (a Snyk foi removida por ser conteúdo de fornecedor e não ser citada) |
+| A1–A11: material do experimento (modelo, data, prompts, códigos, versões, comando, relatório, revisão manual) | O ensaio original **não havia sido executado**. Ele foi **refeito de verdade** em 29–30/10/2026 com três assistentes (ChatGPT, Gemini, Claude) e 15 trechos. Tudo está em `bandit_reproducao/`: prompts, respostas brutas, prints, `registro_geracao.csv`, códigos extraídos, relatório do Bandit e `classificacao_manual.csv` aprovada pelo autor |
+| B1–B3: datas, expressões e quantitativos da busca | Não foram registrados. O artigo declara isso como limitação e caracteriza a revisão como **narrativa** |
+| B4: 11 ou 12 estudos | Corpus de 11 documentos mantido |
+| C1: versão de Pearce et al. | Passou a ser citada a versão revisada por pares (IEEE S&P 2022) |
+| C2: versão de Hubinger et al. | v3, a versão atual do arXiv |
+| C3: local de Taha | Omitido; ficaram editora e edição |
+| C4: datas de acesso | 29 e 30/10/2026, as datas de verificação |
+| D1–D3: escopo, unidades de x₁ e título | Mantidas as propostas (o autor não se opôs) |
+| D4: push do repositório | Feito |
 
-## C. Confirmações bibliográficas (destacadas em amarelo nas referências)
+## Antes de submeter (prazo: 02/11/2026)
 
-| # | Item |
-|---|---|
-| C1 | Pearce et al.: qual versão do arXiv foi lida (o texto indica v3, a atual, de 16/12/2021) |
-| C2 | Hubinger et al.: qual versão do arXiv foi lida (o texto indica v3) |
-| C3 | Taha (2017): conferir o local de publicação no exemplar usado (edição norte-americana × Global Edition) |
-| C4 | Datas de acesso das fontes on-line adicionadas (Bandit, Python, CWE): foram consultadas em 29/10/2026; ajustar se você as consultar em outra data |
+1. Abrir `artigo/artigo_edepa_2026_revisado.docx` no **Microsoft Word** e conferir quebras de tabela, figura e páginas. Na prévia do LibreOffice são 11 páginas; o limite é 12.
+2. Ler o artigo inteiro: quem assina precisa conseguir defender cada frase na apresentação oral (10 min + 5 min de perguntas).
+3. Exportar o PDF como **`Germano Augusto Freitas Barbosa.pdf`**.
+4. Submeter pela Even3.
 
-## D. Decisões do autor
+## Declarações que constam no artigo (para você saber defender)
 
-| # | Decisão |
-|---|---|
-| D1 | Aprovar o cenário delimitado (camada Python de supervisão de uma unidade de armazenagem e secagem de grãos) ou indicar outro sistema. Os cinco componentes foram mapeados a partir das cinco tarefas; confirmar se esse mapeamento reflete a intenção original dos prompts |
-| D2 | Aprovar a interpretação de x₁ como **horas da equipe** em atividades de SAST (a mais coerente com a restrição "a equipe dispõe de 40 h" do texto original). Se x₁ era tempo de máquina, é preciso reformular R1 com α ≠ 1, e a solução muda |
-| D3 | Aprovar o novo título |
-| D4 | Fazer *commit* e *push* do repositório (o artigo cita `https://github.com/germanoafb/edepa-devsecops-simplex`; hoje o repositório remoto só tem o README) |
-| D5 | Exportar o PDF final no Microsoft Word, com o nome "Germano Augusto Freitas Barbosa.pdf", e remover todos os destaques amarelos antes de submeter |
+- As 5 tarefas foram enviadas numa única mensagem para cada IA, e não uma por conversa.
+- As condições de geração foram diferentes: memória ativa no ChatGPT, raciocínio Alto no Gemini e execução de código no Claude. Por isso o artigo **não compara** as IAs entre si.
+- A revisão manual foi preparada com apoio do Claude e conferida por você.
+- Uma tentativa de gerar o código do Claude por um subagente do Claude Code foi **descartada**: o subagente tinha contexto do repositório e respondeu já sabendo que se tratava de um teste de segurança. O dado usado veio do claude.ai.

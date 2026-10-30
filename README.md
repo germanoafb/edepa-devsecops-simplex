@@ -10,10 +10,15 @@ Autores: Germano Augusto Freitas Barbosa, Adriano Dawison de Lima, Leandro Aurel
 modelo_simplex/      verificação do modelo de Programação Linear (Simplex)
   simplex_edepa.py
   saida/             resultados.json, cenarios.csv, execucao.log
-bandit_reproducao/   procedimento de análise com Bandit
-  executar_bandit.py
-  prompts_originais/ prompts do ensaio (a incluir)
-  codigos_originais/ códigos gerados pela IA (a incluir)
+bandit_reproducao/   ensaio com Bandit (ChatGPT, Gemini e Claude; 15 trechos)
+  prompts_originais/   os 5 prompts, enviados numa única mensagem
+  respostas_brutas/    respostas das IAs, sem edição
+  evidencias_prints/   capturas de tela
+  registro_geracao.csv modelo, plano, configurações, data e hora de cada geração
+  extrair_codigo.py    extrai os blocos Python das respostas
+  codigos_originais/   códigos extraídos (um arquivo por IA e tarefa)
+  executar_bandit.py   roda o Bandit e preserva o relatório bruto
+  saida/experimento/   relatório do Bandit e classificação manual aprovada
   controle_sintetico/  trechos de CONTROLE (não são o experimento)
 figuras/             script da Figura 1
 artigo/              DOCX revisado e prévia em PDF
@@ -39,8 +44,11 @@ Resultado de referência: x₁* = 20, x₂* = 20, Z* = 200, folgas (0, 4, 0); ce
 
 ```bash
 pip install bandit==1.9.4
-python3 bandit_reproducao/executar_bandit.py bandit_reproducao/codigos_originais --rotulo experimento
+python3 bandit_reproducao/extrair_codigo.py
+python3 bandit_reproducao/executar_bandit.py bandit_reproducao/codigos_originais --rotulo reexecucao
 ```
+
+Resultado de referência: 5/15 tarefas sinalizadas e 11 alertas (0 de severidade alta). Contando por arquivo, o script mostra 6/16, porque o `comum.py` do Claude só contém o `import subprocess` usado na T4. Use um rótulo diferente de `experimento` para não misturar com a saída original.
 
 O script grava o relatório **bruto** do Bandit (JSON e TXT), uma tabela de alertas (teste, severidade, confiança, CWE e linha), um resumo com denominadores explícitos, versões e hashes SHA-256, e a planilha `classificacao_manual.csv`, que o revisor humano deve preencher. O script não confirma vulnerabilidades: a confirmação é humana e precisa ser documentada.
 

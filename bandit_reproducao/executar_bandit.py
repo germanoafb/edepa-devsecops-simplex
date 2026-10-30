@@ -103,7 +103,12 @@ def main() -> int:
     com_alerta = sorted({rel(a["filename"]) for a in alertas})
     n_total, n_alerta = len(arquivos), len(com_alerta)
 
-    with open(destino / "classificacao_manual.csv", "w", newline="", encoding="utf-8") as fh:
+    # Nunca sobrescreve uma classificação já preenchida: gera um modelo novo ao lado.
+    planilha = destino / "classificacao_manual.csv"
+    if planilha.exists():
+        planilha = destino / "classificacao_manual_modelo_novo.csv"
+        print(f"classificacao_manual.csv já existe; modelo vazio gravado em {planilha.name}")
+    with open(planilha, "w", newline="", encoding="utf-8") as fh:
         w = csv.writer(fh)
         w.writerow(["arquivo", "origem", "teste_id_ou_descricao", "linha",
                     "cwe_scanner", "cwe_avaliacao_humana",

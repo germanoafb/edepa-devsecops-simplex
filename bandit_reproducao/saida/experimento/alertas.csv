@@ -24,6 +24,18 @@ chatgpt/t5.py,2,B405,blacklist,LOW,HIGH,CWE-20,"Using xml.etree.ElementTree to p
 chatgpt/t5.py,7,B314,blacklist,MEDIUM,HIGH,CWE-20,Using xml.etree.ElementTree.parse to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.etree.ElementTree.parse with its defusedxml equivalent function or make sure defusedxml.defuse_stdlib() is called,"6     try:
 7         arvore = ET.parse(caminho)
 8         raiz = arvore.getroot()"
+claude/comum.py,20,B404,blacklist,LOW,HIGH,CWE-78,Consider possible security implications associated with the subprocess module.,"19 import sqlite3
+20 import subprocess
+21 import uuid"
+claude/t4.py,42,B603,subprocess_without_shell_equals_true,LOW,HIGH,CWE-78,subprocess call - check for execution of untrusted input.,"41     try:
+42         resultado = subprocess.run(
+43             cmd,
+44             capture_output=True,
+45             text=True,
+46             timeout=tentativas * timeout_s + 5,
+47             check=False,
+48         )
+49     except subprocess.TimeoutExpired:"
 gemini/t4.py,3,B404,blacklist,LOW,HIGH,CWE-78,Consider possible security implications associated with the subprocess module.,"2 import platform
 3 import subprocess
 4"

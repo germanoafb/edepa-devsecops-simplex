@@ -1,4 +1,4 @@
-Run started:2026-10-30 00:48:37.888596+00:00
+Run started:2026-10-30 23:09:30.189501+00:00
 
 Test results:
 >> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
@@ -65,6 +65,32 @@ Test results:
    Severity: Low   Confidence: High
    CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_imports.html#b404-import-subprocess
+   Location: /home/germano/Documentos/edepa-devsecops-simplex/bandit_reproducao/codigos_originais/claude/comum.py:20:0
+19	import sqlite3
+20	import subprocess
+21	import uuid
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b603_subprocess_without_shell_equals_true.html
+   Location: /home/germano/Documentos/edepa-devsecops-simplex/bandit_reproducao/codigos_originais/claude/t4.py:42:20
+41	    try:
+42	        resultado = subprocess.run(
+43	            cmd,
+44	            capture_output=True,
+45	            text=True,
+46	            timeout=tentativas * timeout_s + 5,
+47	            check=False,
+48	        )
+49	    except subprocess.TimeoutExpired:
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_imports.html#b404-import-subprocess
    Location: /home/germano/Documentos/edepa-devsecops-simplex/bandit_reproducao/codigos_originais/gemini/t4.py:3:0
 2	import platform
 3	import subprocess
@@ -105,19 +131,19 @@ Test results:
 --------------------------------------------------
 
 Code scanned:
-	Total lines of code: 234
+	Total lines of code: 468
 	Total lines skipped (#nosec): 0
 	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
 
 Run metrics:
 	Total issues (by severity):
 		Undefined: 0
-		Low: 7
+		Low: 9
 		Medium: 2
 		High: 0
 	Total issues (by confidence):
 		Undefined: 0
 		Low: 0
 		Medium: 0
-		High: 9
+		High: 11
 Files skipped (0):

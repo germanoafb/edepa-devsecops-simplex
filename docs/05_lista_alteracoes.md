@@ -17,6 +17,17 @@
 | Nomenclatura | Símbolos com unidades (x₁, x₂, Z, c, b, s, α, *); siglas completadas (IoT, SQL, XML, XXE, TI/TO); OWASP = "Open Worldwide Application Security Project" (nome atual da fundação) | 6 |
 | Referências | Todos os autores listados (regra do modelo); Wang com título e versão corrigidos; Pinheiro com páginas e DOI; Zhang com páginas, DOI e local; DOIs incluídos; preprints identificados; Snyk removida; três referências técnicas de apoio adicionadas | 9 |
 
+## Revisão de 30/10/2026: ensaio real
+
+| Seção | Alteração |
+|---|---|
+| Resumo, Introdução, Conclusão | Ensaio descrito com os dados reais: 3 assistentes, 15 trechos, 5/15 sinalizados, 0 vulnerabilidades confirmadas, 4 fragilidades encontradas só manualmente |
+| Métodos: busca | Campos amarelos substituídos pela declaração de que datas, expressões e quantitativos não foram registrados (revisão narrativa) |
+| Métodos: ensaio | Procedimento real (assistentes, planos, configurações, datas, envio único, extração, Bandit 1.9.4 com configuração padrão, revisão assistida por IA e conferida pelo autor) e categorias (i)–(vi) |
+| Resultados: ensaio | Nova Tabela 2 (tarefa × assistente); discussão de falsos positivos, riscos não confirmados e fragilidades encontradas só manualmente; limitações das condições distintas; o ensaio antigo (4/5, Path Traversal) foi **removido** |
+| Modelo de PL | A justificativa qualitativa de c₂ > c₁ passou a citar as fragilidades encontradas só na revisão manual |
+| Referências | Pearce: versão IEEE S&P 2022; nova: OWASP Password Storage Cheat Sheet; Taha sem local; nenhum campo amarelo restante |
+
 ## Arquivos novos no repositório
 
 | Arquivo | Conteúdo |
@@ -26,4 +37,5 @@
 | `modelo_simplex/simplex_edepa.py` e `modelo_simplex/saida/` | Script e saídas (JSON, CSV, log) |
 | `bandit_reproducao/executar_bandit.py`, `controle_sintetico/`, `codigos_originais/`, `prompts_originais/` | Procedimento de reprodução, controles sintéticos e pastas a preencher |
 | `figuras/figura1_pipeline.py` e `.png` | Figura 1 reprodutível |
+| `bandit_reproducao/extrair_codigo.py`, `prompts_originais/`, `respostas_brutas/`, `evidencias_prints/`, `registro_geracao.csv`, `codigos_originais/`, `saida/experimento/` | Ensaio real e seus artefatos |
 | `docs/01..06` | Matriz, pendências, auditoria, execuções, alterações e checklist |

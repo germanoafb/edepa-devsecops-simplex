@@ -1,6 +1,6 @@
 {
   "errors": [],
-  "generated_at": "2026-10-30T00:48:37Z",
+  "generated_at": "2026-10-30T23:09:30Z",
   "metrics": {
     "/home/germano/Documentos/edepa-devsecops-simplex/bandit_reproducao/codigos_originais/chatgpt/t1.py": {
       "CONFIDENCE.HIGH": 0,
@@ -64,6 +64,84 @@
       "SEVERITY.MEDIUM": 1,
       "SEVERITY.UNDEFINED": 0,
       "loc": 19,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "/home/germano/Documentos/edepa-devsecops-simplex/bandit_reproducao/codigos_originais/claude/comum.py": {
+      "CONFIDENCE.HIGH": 1,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 1,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 38,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "/home/germano/Documentos/edepa-devsecops-simplex/bandit_reproducao/codigos_originais/claude/t1.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 22,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "/home/germano/Documentos/edepa-devsecops-simplex/bandit_reproducao/codigos_originais/claude/t2.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 28,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "/home/germano/Documentos/edepa-devsecops-simplex/bandit_reproducao/codigos_originais/claude/t3.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 49,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "/home/germano/Documentos/edepa-devsecops-simplex/bandit_reproducao/codigos_originais/claude/t4.py": {
+      "CONFIDENCE.HIGH": 1,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 1,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 43,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "/home/germano/Documentos/edepa-devsecops-simplex/bandit_reproducao/codigos_originais/claude/t5.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 54,
       "nosec": 0,
       "skipped_tests": 0
     },
@@ -133,15 +211,15 @@
       "skipped_tests": 0
     },
     "_totals": {
-      "CONFIDENCE.HIGH": 9,
+      "CONFIDENCE.HIGH": 11,
       "CONFIDENCE.LOW": 0,
       "CONFIDENCE.MEDIUM": 0,
       "CONFIDENCE.UNDEFINED": 0,
       "SEVERITY.HIGH": 0,
-      "SEVERITY.LOW": 7,
+      "SEVERITY.LOW": 9,
       "SEVERITY.MEDIUM": 2,
       "SEVERITY.UNDEFINED": 0,
-      "loc": 234,
+      "loc": 468,
       "nosec": 0,
       "skipped_tests": 0
     }
@@ -256,6 +334,52 @@
       "more_info": "https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b313-b320-xml-bad-elementtree",
       "test_id": "B314",
       "test_name": "blacklist"
+    },
+    {
+      "code": "19 import sqlite3\n20 import subprocess\n21 import uuid\n",
+      "col_offset": 0,
+      "end_col_offset": 17,
+      "filename": "/home/germano/Documentos/edepa-devsecops-simplex/bandit_reproducao/codigos_originais/claude/comum.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 78,
+        "link": "https://cwe.mitre.org/data/definitions/78.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Consider possible security implications associated with the subprocess module.",
+      "line_number": 20,
+      "line_range": [
+        20
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_imports.html#b404-import-subprocess",
+      "test_id": "B404",
+      "test_name": "blacklist"
+    },
+    {
+      "code": "41     try:\n42         resultado = subprocess.run(\n43             cmd,\n44             capture_output=True,\n45             text=True,\n46             timeout=tentativas * timeout_s + 5,\n47             check=False,\n48         )\n49     except subprocess.TimeoutExpired:\n",
+      "col_offset": 20,
+      "end_col_offset": 9,
+      "filename": "/home/germano/Documentos/edepa-devsecops-simplex/bandit_reproducao/codigos_originais/claude/t4.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 78,
+        "link": "https://cwe.mitre.org/data/definitions/78.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "subprocess call - check for execution of untrusted input.",
+      "line_number": 42,
+      "line_range": [
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b603_subprocess_without_shell_equals_true.html",
+      "test_id": "B603",
+      "test_name": "subprocess_without_shell_equals_true"
     },
     {
       "code": "2 import platform\n3 import subprocess\n4 \n",
