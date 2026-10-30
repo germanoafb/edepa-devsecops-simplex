@@ -283,6 +283,99 @@ def pontos_do_parecer():
 
 
 # ---------------------------------------------------------------------------
+# Relatório legível (Markdown)
+# ---------------------------------------------------------------------------
+def _tabela(cab, linhas):
+    out = ["| " + " | ".join(cab) + " |", "|" + "---|" * len(cab)]
+    out += ["| " + " | ".join(str(c) for c in l) + " |" for l in linhas]
+    return "\n".join(out)
+
+
+_SUB = str.maketrans("123", "₁₂₃")
+_ROTULOS = {"R1_equipe": "equipe", "R2_pipeline_SAST": "pipeline", "R3_revisao_humana": "revisão humana"}
+
+
+def _quadro_md(q):
+    nome = lambda t: t.translate(_SUB) if t != "Solucao" else "Solução"
+    linhas = [[nome(l["base"])] + [str(v).replace("-", "−") for v in l["valores"]] for l in q["linhas"]]
+    return _tabela(["Base"] + [nome(c) for c in q["colunas"]], linhas)
+
+
+def relatorio_legivel(rel, checagens):
+    base = rel["cenarios"][0]
+    q = base["quadros_simplex"]
+    ok = sum(1 for c, _ in checagens if c)
+    linhas = [
+        "# Relatório da verificação do modelo de Programação Linear",
+        "",
+        "Gerado automaticamente por `simplex_edepa.py`. Corresponde às Tabelas 3, 4 e 5 do artigo.",
+        "",
+        "## Modelo",
+        "",
+        "Maximizar **Z = 4x₁ + 6x₂**, sujeito a:",
+        "",
+        "- x₁ + x₂ ≤ 40 (horas da equipe)",
+        "- x₁ ≤ 24 (limite do pipeline de análise estática)",
+        "- x₂ ≤ 20 (limite de revisão humana)",
+        "- x₁, x₂ ≥ 0",
+        "",
+        "x₁ = horas semanais de análise estática automatizada (SAST); x₂ = horas semanais de revisão humana; "
+        "Z = índice hipotético de redução de risco (pontos/semana).",
+        "",
+        "> Os coeficientes 4 e 6 e as capacidades 40, 24 e 20 são **hipóteses de um cenário ilustrativo**. "
+        "Este relatório confirma a correção matemática da solução, não a validade empírica dos parâmetros.",
+        "",
+        "## Resultado",
+        "",
+        f"**Solução ótima:** x₁* = {base['x1']} h, x₂* = {base['x2']} h, **Z* = {base['Z']} pontos**.",
+        "",
+        f"Folgas: s₁ = {base['s1']} (equipe), s₂ = {base['s2']} (pipeline), s₃ = {base['s3']} (revisão). "
+        "As restrições de equipe e de revisão estão ativas (folga zero); o pipeline tem 4 h de capacidade "
+        "não utilizada.",
+        "",
+        "Conferido por três métodos independentes: Simplex tabular com frações exatas, enumeração de todos "
+        "os vértices da região viável" + (" e o solver HiGHS (SciPy)." if base.get("scipy_highs") else
+                                         ". (SciPy não instalado: o solver HiGHS não foi usado.)"),
+        "",
+        "## Quadros do Simplex",
+        "",
+    ]
+    for quadro in q:
+        linhas += [f"**{quadro['info'].translate(_SUB)}**", "", _quadro_md(quadro), ""]
+    linhas += [
+        "## Sensibilidade: uma capacidade alterada por vez (Tabela 5)",
+        "",
+        _tabela(["Cenário", "Capacidades (equipe; pipeline; revisão)", "x₁*", "x₂*", "Z*",
+                 "Folgas s₁; s₂; s₃", "Variação de Z"],
+                [[c["descricao"].replace("->", "→"), "; ".join(map(str, c["b"])), c["x1"], c["x2"], c["Z"],
+                  f"{c['s1']}; {c['s2']}; {c['s3']}",
+                  ("—" if c["cenario"] == "base" else
+                   (f"{c['delta_Z_vs_base']:+d}" if c["delta_Z_vs_base"] else "0"))]
+                 for c in rel["cenarios"]]),
+        "",
+        "Os ganhos marginais (+4, +2 e 0) coincidem com os preços-sombra do quadro ótimo. "
+        "O modelo não inclui custos, então eles não indicam qual expansão compensa economicamente.",
+        "",
+        "**Faixas em que a base ótima se mantém:** "
+        + "; ".join(f"{_ROTULOS[k]}: "
+                    f"{d['minimo']} a {d['maximo'] if d['maximo'] is not None else '∞'} h"
+                    for k, d in rel["faixas_capacidades"].items()) + ".",
+        "",
+        "**Robustez dos coeficientes:** a alocação (20, 20) continua ótima para quaisquer coeficientes "
+        "com 0 ≤ c₁ ≤ c₂ (e é a única ótima se 0 < c₁ < c₂). Ou seja, a decisão depende só de a hora de "
+        "revisão valer pelo menos tanto quanto a de análise estática; o valor de Z depende dos números 4 e 6.",
+        "",
+        f"## Verificações automáticas: {ok} de {len(checagens)} aprovadas",
+        "",
+    ]
+    linhas += [f"- {'✅' if c else '❌'} {m}" for c, m in checagens]
+    amb = rel["ambiente"]
+    linhas += ["", "## Ambiente", "",
+               f"Python {amb['python']} ({amb['sistema']}); SciPy: {amb['scipy'] or 'não utilizado'}.", ""]
+    return "\n".join(linhas)
+
+
+# ---------------------------------------------------------------------------
 def main():
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[1])
     ap.add_argument("--saida", default=str(Path(__file__).with_name("saida")))
@@ -292,9 +385,11 @@ def main():
     saida.mkdir(parents=True, exist_ok=True)
 
     falhas = []
+    checagens = []
 
     def checar(cond, msg):
         print(("  [OK]   " if cond else "  [FALHA] ") + msg)
+        checagens.append((bool(cond), msg))
         if not cond:
             falhas.append(msg)
 
@@ -418,7 +513,11 @@ def main():
                         r["s1"], r["s2"], r["s3"], r["delta_Z_vs_base"],
                         ";".join(r["restricoes_ativas"])])
 
+    (saida / "relatorio.md").write_text(relatorio_legivel(relatorio, checagens), encoding="utf-8")
+
     print(f"\nSaídas gravadas em: {saida.resolve()}")
+    print("  relatorio.md   -> relatório para leitura (tabelas e verificações)")
+    print("  resultados.json, cenarios.csv -> dados para conferência automática")
     print("RESULTADO:", "todas as verificações passaram" if not falhas
           else f"{len(falhas)} verificação(ões) falharam")
     return 0 if not falhas else 1

@@ -62,4 +62,6 @@ Modelo: max Z = 4x1 + 6x2 | x1+x2<=40, x1<=24, x2<=20, x>=0
   [OK]   Preços-sombra (4, 0, 2) = ganhos marginais dos cenários de sensibilidade
 
 Saídas gravadas em: /home/germano/Documentos/edepa-devsecops-simplex/modelo_simplex/saida
+  relatorio.md   -> relatório para leitura (tabelas e verificações)
+  resultados.json, cenarios.csv -> dados para conferência automática
 RESULTADO: todas as verificações passaram
