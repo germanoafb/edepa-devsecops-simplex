@@ -34,6 +34,13 @@
 |---|---|
 | Autoria | Por decisão do autor, o artigo passou a ter autoria única (Germano Augusto Freitas Barbosa); foram retirados os nomes de Adriano Dawison de Lima e Leandro Aureliano da Silva, cujos CPFs, exigidos na submissão, não puderam ser obtidos a tempo. "Pelos autores" foi trocado por "pelo autor" no texto e nas fontes das tabelas |
 
+## Revisão de 30/10/2026: versão para avaliação cega
+
+| Arquivo | Conteúdo |
+|---|---|
+| `artigo/artigo_edepa_2026_anonimo.docx` | Versão sem identificação exigida pela plataforma: autoria substituída por "[Identificação de autoria omitida para avaliação cega]", os dois links do repositório substituídos por "[endereço do repositório omitido para avaliação cega]" e metadados de autor vazios. Varredura sem ocorrências de nomes, e-mail, afiliação ou usuário do GitHub |
+| `artigo/Artigo EDEPA 2026 - versao sem identificacao.pdf` | PDF da versão anônima (LibreOffice; 11 páginas; propriedades sem autor) |
+
 ## Arquivos novos no repositório
 
 | Arquivo | Conteúdo |
