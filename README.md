@@ -2,7 +2,7 @@
 
 **Artigo:** *Verificação de código gerado por IA em DevSecOps para supervisão agroindustrial: ensaio com Bandit e alocação de horas pelo Método Simplex*
 
-**Autores:** Germano Augusto Freitas Barbosa, Adriano Dawison de Lima, Leandro Aureliano da Silva (UNIUBE, Engenharia de Computação). Contato: germanofb@edu.uniube.br
+**Autor:** Germano Augusto Freitas Barbosa (UNIUBE, Engenharia de Computação). Contato: germanofb@edu.uniube.br
 
 Este repositório guarda tudo o que é preciso para **conferir os resultados do artigo**: as contas do Método Simplex, os códigos gerados pelas IAs e a análise de segurança.
 

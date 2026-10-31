@@ -28,6 +28,12 @@
 | Modelo de PL | A justificativa qualitativa de c₂ > c₁ passou a citar as fragilidades encontradas só na revisão manual |
 | Referências | Pearce: versão IEEE S&P 2022; nova: OWASP Password Storage Cheat Sheet; Taha sem local; nenhum campo amarelo restante |
 
+## Revisão de 30/10/2026: autoria
+
+| Seção | Alteração |
+|---|---|
+| Autoria | Por decisão do autor, o artigo passou a ter autoria única (Germano Augusto Freitas Barbosa); foram retirados os nomes de Adriano Dawison de Lima e Leandro Aureliano da Silva, cujos CPFs, exigidos na submissão, não puderam ser obtidos a tempo. "Pelos autores" foi trocado por "pelo autor" no texto e nas fontes das tabelas |
+
 ## Arquivos novos no repositório
 
 | Arquivo | Conteúdo |
