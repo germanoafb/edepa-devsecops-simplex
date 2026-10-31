@@ -15,6 +15,7 @@ Este repositório guarda tudo o que é preciso para **conferir os resultados do 
 | **Os quadros do Simplex e os cenários de sensibilidade, já calculados** | [`modelo_simplex/saida/relatorio.md`](modelo_simplex/saida/relatorio.md): abre direto no navegador, formatado em tabelas |
 | **Refazer todas as contas você mesmo, no navegador** | [Abrir no Google Colab](https://colab.research.google.com/github/germanoafb/edepa-devsecops-simplex/blob/main/verificar_resultados.ipynb): clique em cada bloco e aperte ▶. Precisa só de uma conta Google |
 | **O artigo** | [`artigo/artigo_edepa_2026_revisado.docx`](artigo/artigo_edepa_2026_revisado.docx) |
+| **A apresentação (8 slides, modelo oficial do EDEPA)** | [`apresentacao/`](apresentacao) |
 
 ---
 
@@ -95,7 +96,8 @@ bandit_reproducao/   o ensaio com as IAs e o Bandit
   codigos_originais/   os códigos extraídos (um arquivo por IA e tarefa)
   saida/experimento/   relatório do Bandit e classificação humana
   controle_sintetico/  códigos de TESTE da ferramenta (não fazem parte do ensaio)
-figuras/             script da Figura 1
+apresentacao/        apresentação oral (modelo oficial do EDEPA 2026), com notas do apresentador
+figuras/             Figura 1 do artigo e gráfico da região viável (scripts e imagens)
 docs/                relatórios da revisão: correções, referências, checklist
 verificar_resultados.ipynb   notebook do Google Colab
 ```
