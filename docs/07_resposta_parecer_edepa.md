@@ -41,11 +41,11 @@ O parecer marcava parte dos itens como "já aplicada". Como nenhum arquivo corri
 | 35 | Orientação prática para a agroindústria | Análise estática como filtro inicial e revisão humana nos componentes que manipulam credenciais, laudos e comandos a equipamentos | ✅ |
 | 36 | Trabalhos futuros | Provas de exploração e segunda revisão independente | ✅ |
 | 37 | Remover AST da nomenclatura | Removida | ✅ |
-| 38 | Pinheiro, Taha e norma | Pinheiro: "J. M.", como no site da ABM. Taha: "10. ed. (Global Edition), Pearson, Harlow", a edição de 2017. Norma: mantido o modelo do EDEPA, que não é ABNT (ver item 7) | ✅ formato; ⚠️ Taha: livro não consultado pelos autores (ver pendência) |
+| 38 | Pinheiro, Taha e norma | Pinheiro: "J. M.", como no site da ABM. Taha: "10. ed. (Global Edition), Pearson, Harlow", a edição de 2017. Norma: mantido o modelo do EDEPA, que não é ABNT (ver item 7) | ✅ Taha substituído pela edição consultada pelo autor: tradução brasileira, 8. ed., Pearson Prentice Hall, São Paulo, 2007 |
 
 ## Pendências do autor (atualizado em 05/11/2026)
 
 1. **Item 15:** resolvido. O autor não encontrou a configuração de memória no Gemini e no Claude, e o texto mantém a declaração honesta de que o estado não foi registrado.
 2. **Item 24:** resolvido. Reclassificação do B607 aprovada pelo autor.
-3. **Taha (2017):** a referência já constava no artigo original, mas **nenhum autor consultou o livro**. Ela sustenta apenas a descrição do Método Simplex tabular, que é conteúdo padrão de Pesquisa Operacional. Antes da versão final, o autor deve consultar a obra (biblioteca da UNIUBE ou Biblioteca Virtual) e conferir edição, ano, editora e local. Se a edição disponível for outra (por exemplo, a tradução "Pesquisa Operacional", Pearson Prentice Hall), a referência deve ser trocada por ela.
+3. **Taha:** resolvido. O autor consultou a tradução brasileira (*Pesquisa Operacional*, 8. ed., tradução de Arlete Simille Marques, revisão técnica de Rodrigo Arnaldo Scarpel, Pearson Prentice Hall, São Paulo, 2007), e a referência e as citações passaram a apontar para ela.
 4. **Título na plataforma:** editar a submissão com o título novo e os quatro coautores (CPF e inscrição de cada um).

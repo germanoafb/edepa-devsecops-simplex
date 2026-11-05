@@ -124,7 +124,7 @@ def build():
       "consultada registrada; C3, documentos técnicos de organizações de referência. Foram excluídos duplicatas, "
       "conteúdos promocionais de fornecedores sem descrição metodológica e documentos fora dos eixos. "
       "Referências de apoio conceitual e metodológico (Rajapakse et al., 2022; Gupta et al., 2020; Demestichas "
-      "et al., 2020; Taha, 2017) e documentação de ferramentas e taxonomias (PyCQA, 2026; Python Software "
+      "et al., 2020; Taha, 2007) e documentação de ferramentas e taxonomias (PyCQA, 2026; Python Software "
       "Foundation, 2026; MITRE Corporation, 2026) não integram o corpus.")
     P("O corpus final reúne onze documentos (Tabela 1): seis artigos em periódico ou anais revisados por pares "  # [20]
       "(C1); um trabalho técnico em anais de evento, cuja revisão por pares não pôde ser verificada (Pinheiro, "
@@ -200,7 +200,7 @@ def build():
     EQ("x₁, x₂ ≥ 0", 5)
     blank()
     P("Na forma padrão, introduzem-se as variáveis de folga s₁, s₂ e s₃ (h/semana), uma para cada restrição "
-      "das Equações 2 a 4. O modelo foi resolvido manualmente pelo Método Simplex tabular (Taha, 2017) e "
+      "das Equações 2 a 4. O modelo foi resolvido manualmente pelo Método Simplex tabular (Taha, 2007) e "
       "verificado por um script em Python 3, que usa apenas a biblioteca padrão e está disponível no repositório "
       f"do trabalho ({REPO_URL}). O script (a) reproduz o Simplex tabular em aritmética racional exata, "
       "(b) enumera todos os vértices da região viável e (c), quando o SciPy está instalado, resolve o modelo pelo "
@@ -519,7 +519,7 @@ def build():
         "RAJAPAKSE, R. N.; ZAHEDI, M.; BABAR, M. A.; SHEN, H. (2022), Challenges and Solutions when Adopting "
         "DevSecOps: A Systematic Review, Information and Software Technology, Vol 141, 106700. "
         "DOI: 10.1016/j.infsof.2021.106700.",
-        "TAHA, H. A. (2017), Operations Research: An Introduction, 10. ed. (Global Edition), Pearson, Harlow.",
+        "TAHA, H. A. (2007), Pesquisa Operacional, 8. ed., tradução de A. S. Marques, Pearson Prentice Hall, São Paulo.",
         "WANG, J.; LUO, X.; CAO, L.; HE, H.; HUANG, H.; XIE, J.; JATOWT, A.; CAI, Y. (2024), Is Your "
         "AI-Generated Code Really Secure? Evaluating Large Language Models on Secure Code Generation with "
         "CodeSecEval, arXiv preprint arXiv:2407.02395v1, 2 jul. 2024 (não revisado por pares; a v2, de 4 jul. "
