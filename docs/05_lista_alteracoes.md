@@ -41,6 +41,14 @@
 | `artigo/artigo_edepa_2026_anonimo.docx` | Versão sem identificação exigida pela plataforma: autoria substituída por "[Identificação de autoria omitida para avaliação cega]", os dois links do repositório substituídos por "[endereço do repositório omitido para avaliação cega]" e metadados de autor vazios. Varredura sem ocorrências de nomes, e-mail, afiliação ou usuário do GitHub |
 | `artigo/Artigo EDEPA 2026 - versao sem identificacao.pdf` | PDF da versão anônima (LibreOffice; 11 páginas; propriedades sem autor) |
 
+## Revisão de 05/11/2026: parecer do EDEPA
+
+Todos os 38 itens do parecer foram tratados; o detalhamento está em `docs/07_resposta_parecer_edepa.md`. Em resumo: título com "cenário de supervisão agroindustrial"; resumo com objetivo e conclusão; 3 referências novas (Rajapakse et al., 2022; Gupta et al., 2020; Demestichas et al., 2020); Du et al. na versão publicada (ICSE-SEIP 2026, C1); Yang et al. com o estudo de caso descrito; prompts completos no texto; declaração de viés de autoavaliação e roteiro de inspeção publicado; B607 reclassificado (5 falsos positivos e 6 riscos não confirmados); T3 do Gemini separada em CWE-434 e CWE-73 (5 fragilidades); versão do Expat; funções e iterações de hash; Figura 1 com "SAST (Bandit, execução local)". O gerador do DOCX passou a ficar em `artigo/gerador/`.
+
+## Revisão de 05/11/2026: autoria restabelecida
+
+Por decisão do autor, Adriano Dawison de Lima (professor) e Leandro Aureliano da Silva (coordenador do curso) voltaram a constar como coautores na versão identificada do artigo e na apresentação. O texto voltou a usar "pelos autores"; a revisão manual do ensaio continua atribuída ao primeiro autor, que foi quem a conferiu. A versão anônima segue sem nenhuma identificação. Em seguida, foram incluídos como coautores os professores da UNIUBE Matheus de S. Valente e Marcelo Lucas (afiliação ¹), totalizando 5 autores (o modelo do EDEPA admite até 6).
+
 ## Arquivos novos no repositório
 
 | Arquivo | Conteúdo |

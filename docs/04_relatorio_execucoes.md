@@ -62,10 +62,12 @@ O ensaio original **não havia sido executado** e foi refeito. Procedimento: `pr
 |---|---|---|---|
 | Tarefas sinalizadas | T4, T5 | T4, T5 | T4 |
 | Alertas | 5 | 4 | 2 |
-| Falsos positivos | 3 | 1 | 2 |
-| Riscos não confirmados | 2 | 3 | 0 |
+| Falsos positivos | 2 | 1 | 2 |
+| Riscos não confirmados | 3 | 3 | 0 |
 | Vulnerabilidades confirmadas | 0 | 0 | 0 |
-| Fragilidades encontradas só na revisão manual | 0 | 4 (CWE-208, CWE-916 ×2, CWE-434) | 0 |
+| Fragilidades encontradas só na revisão manual | 0 | 5 (CWE-208, CWE-916 ×2, CWE-434, CWE-73) | 0 |
+
+**Atualização de 05/11/2026 (parecer do EDEPA):** o B607 do ChatGPT foi reclassificado de falso positivo para risco não confirmado (caminho parcial do executável), e a fragilidade de upload do Gemini foi separada em CWE-434 e CWE-73.
 
 Detalhes por alerta: `saida/experimento/alertas.csv` e `classificacao_manual.csv` (aprovada pelo autor).
 
