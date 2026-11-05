@@ -2,7 +2,7 @@
 
 **Artigo:** *Verificação de código gerado por IA em DevSecOps para supervisão agroindustrial: ensaio com Bandit e alocação de horas pelo Método Simplex*
 
-**Autor:** Germano Augusto Freitas Barbosa (UNIUBE, Engenharia de Computação). Contato: germanofb@edu.uniube.br
+**Autores:** Germano Augusto Freitas Barbosa, Adriano Dawison de Lima, Leandro Aureliano da Silva, Matheus de S. Valente e Marcelo Lucas (UNIUBE). Contato: germanofb@edu.uniube.br
 
 Este repositório guarda tudo o que é preciso para **conferir os resultados do artigo**: as contas do Método Simplex, os códigos gerados pelas IAs e a análise de segurança.
 
@@ -29,6 +29,7 @@ Este repositório guarda tudo o que é preciso para **conferir os resultados do 
 | Os 5 pedidos (prompts) feitos às IAs | [`bandit_reproducao/prompts_originais/prompts.txt`](bandit_reproducao/prompts_originais/prompts.txt) |
 | As respostas das IAs, sem edição, e os prints | [`bandit_reproducao/respostas_brutas/`](bandit_reproducao/respostas_brutas) e [`evidencias_prints/`](bandit_reproducao/evidencias_prints) |
 | Qual IA, versão, data e configuração | [`bandit_reproducao/registro_geracao.csv`](bandit_reproducao/registro_geracao.csv) |
+| Roteiro usado na revisão manual | [`docs/roteiro_inspecao.md`](docs/roteiro_inspecao.md) |
 | Tabela 2 (alertas do Bandit e análise humana) | [`alertas.csv`](bandit_reproducao/saida/experimento/alertas.csv) e [`classificacao_manual.csv`](bandit_reproducao/saida/experimento/classificacao_manual.csv) |
 
 Os arquivos `.csv` são planilhas: o GitHub os mostra como tabela, e eles abrem no Excel.
@@ -40,7 +41,7 @@ Os arquivos `.csv` são planilhas: o GitHub os mostra como tabela, e eles abrem 
 **Modelo matemático.** A solução ótima x₁ = 20 h, x₂ = 20 h, Z = 200 foi conferida por **três métodos independentes**: o Simplex tabular com frações exatas (sem arredondamento), a enumeração de todos os vértices da região viável e um otimizador profissional (HiGHS). Os três concordam, e os quadros coincidem com as Tabelas 3 e 4 do artigo.
 Os coeficientes **4 e 6** e os limites **40, 24 e 20 h** são **hipóteses de um cenário ilustrativo**, e não medições. A verificação confirma que a conta está certa para esses números, não que os números representem uma equipe real.
 
-**Ensaio com IAs.** Três IAs (ChatGPT, Gemini e Claude) receberam os mesmos 5 pedidos, sem nenhuma instrução de segurança, e geraram 15 trechos de código. A ferramenta **Bandit** apontou alertas em 5 dos 15; a leitura humana mostrou que **nenhum** era uma vulnerabilidade confirmada e encontrou 4 fragilidades que a ferramenta não viu. É um ensaio **exploratório**: uma nova geração das IAs produziria códigos diferentes.
+**Ensaio com IAs.** Três IAs (ChatGPT, Gemini e Claude) receberam os mesmos 5 pedidos, sem nenhuma instrução de segurança, e geraram 15 trechos de código. A ferramenta **Bandit** apontou alertas em 5 dos 15 trechos (5 falsos positivos e 6 riscos não confirmados); **nenhum** pôde ser confirmado como vulnerabilidade, porque não se fizeram testes de exploração, e a leitura humana encontrou 5 fragilidades que a ferramenta não viu. É um ensaio **exploratório**: uma nova geração das IAs produziria códigos diferentes.
 
 ---
 
@@ -78,7 +79,7 @@ pip install bandit==1.9.4
 python3 bandit_reproducao/executar_bandit.py bandit_reproducao/codigos_originais --rotulo reexecucao
 ```
 
-Deve mostrar "Trechos sinalizados: 6/16 | alertas: 11". O script conta arquivos: o código do Claude veio com uma parte comum separada (`claude/comum.py`, que pertence à tarefa 4), por isso o artigo fala em **5 de 15 tarefas**.
+Deve mostrar "Trechos sinalizados: 6/16 | alertas: 11". O script conta arquivos: o código do Claude veio com uma parte comum separada (`claude/comum.py`, que pertence à tarefa 4), por isso o artigo fala em **5 de 15 trechos**.
 
 **Outros scripts:** `bandit_reproducao/extrair_codigo.py` tira os códigos de dentro das respostas das IAs; `figuras/figura1_pipeline.py` desenha a Figura 1 (precisa de `pip install matplotlib`).
 
