@@ -388,8 +388,8 @@ def build():
       "ótimo; e o //solver// HiGHS retornou status ótimo com os mesmos valores. A Tabela 5 reúne o cenário-base e "
       "os três cenários de sensibilidade.")
     CAP_TAB("Tabela 5: Cenário-base e sensibilidade das capacidades (uma alteração por vez)")
-    TABLE([1300, 1035, 460, 460, 500, 710],
-          ["Cenário", "b₁; b₂; b₃ (h/semana)", "x₁*", "x₂*", "Z*", "s₁; s₂; s₃"],  # [32]
+    TABLE([1250, 1215, 430, 430, 450, 690],
+          ["Cenário", "b₁; b₂; b₃\n(h/semana)", "x₁*", "x₂*", "Z*", "s₁; s₂; s₃"],  # [32]
           [["Base", "40; 24; 20", "20", "20", "200", "0; 4; 0"],
            ["Equipe +1 h", "41; 24; 20", "21", "20", "204", "0; 3; 0"],
            ["Revisão +1 h", "40; 24; 21", "19", "21", "202", "0; 5; 0"],

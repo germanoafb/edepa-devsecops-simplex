@@ -154,13 +154,17 @@ def cell(text, w, header=False, sz=20, jc="left", fill=None):
 
 def TABLE(widths, header, rows, jcs=None, sz=20):
     jcs = jcs or ["left"] * len(widths)
-    b = '<w:{0} w:val="single" w:sz="4" w:space="0" w:color="000000"/>'
-    borders = "".join(b.format(x) for x in ("top", "left", "bottom", "right", "insideH", "insideV"))
+    # Tabela "aberta", como no arquivo-modelo do EDEPA 2026: só linhas horizontais,
+    # sem bordas laterais e sem linhas verticais.
+    b = '<w:{0} w:val="single" w:sz="6" w:space="0" w:color="auto"/>'
+    nil = '<w:{0} w:val="nil"/>'
+    borders = (b.format("top") + nil.format("left") + b.format("bottom") + nil.format("right")
+               + b.format("insideH") + nil.format("insideV"))
     grid = "".join(f'<w:gridCol w:w="{w}"/>' for w in widths)
     x = (f'<w:tbl><w:tblPr><w:tblW w:w="{sum(widths)}" w:type="dxa"/><w:jc w:val="center"/>'
          f'<w:tblBorders>{borders}</w:tblBorders><w:tblLayout w:type="fixed"/></w:tblPr><w:tblGrid>{grid}</w:tblGrid>')
     x += '<w:tr><w:trPr><w:tblHeader/><w:cantSplit/></w:trPr>' + "".join(
-        cell(h, w, header=True, sz=sz, jc=j, fill="D9D9D9") for h, w, j in zip(header, widths, jcs)) + "</w:tr>"
+        cell(h, w, header=True, sz=sz, jc=j) for h, w, j in zip(header, widths, jcs)) + "</w:tr>"
     for r in rows:
         x += '<w:tr><w:trPr><w:cantSplit/></w:trPr>' + "".join(cell(c, w, sz=sz, jc=j) for c, w, j in zip(r, widths, jcs)) + "</w:tr>"
     BODY.append(x + "</w:tbl>")
