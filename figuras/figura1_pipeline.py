@@ -2,7 +2,8 @@
 """Gera a Figura 1 do artigo (arquitetura PROPOSTA de pipeline DevSecOps).
 
 Blocos com contorno contínuo: etapas exercitadas no ensaio exploratório
-(prompt, geração por IA, análise com Bandit, revisão manual).
+(prompt, geração por IA, análise com Bandit executado localmente, revisão manual).
+A integração do SAST a um pipeline de CI/CD é proposta, não testada.
 Blocos tracejados: componentes propostos, não implementados nem avaliados.
 
 Uso: python3 figura1_pipeline.py [saida.png]   (requer matplotlib)
@@ -30,7 +31,7 @@ ax.axis("off")
 etapas = [
     ("Prompt em\nlinguagem natural\n(5 tarefas)", True),
     ("Geração de\ncódigo por IA\n(Python)", True),
-    ("SAST no\npipeline CI/CD\n(Bandit)", True),
+    ("SAST (Bandit,\nexecução local)", True),
     ("Revisão humana\ndo código", True),
     ("Implantação na\ncamada de\nsupervisão", False),
 ]
