@@ -3,3 +3,4 @@ __pycache__/
 resultado_notebook/
 .venv/
 artigo/gerador/modelo/
+.~lock.*#
