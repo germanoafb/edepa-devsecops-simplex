@@ -18,7 +18,7 @@
 
 ## Antes de submeter (prazo: 02/11/2026)
 
-1. Abrir `artigo/artigo_edepa_2026_revisado.docx` no **Microsoft Word** e conferir quebras de tabela, figura e páginas. Na prévia do LibreOffice são 11 páginas; o limite é 12.
+1. Abrir `artigo/Germano Augusto Freitas Barbosa.docx` no **Microsoft Word** e conferir quebras de tabela, figura e páginas. Na prévia do LibreOffice são 11 páginas; o limite é 12.
 2. Ler o artigo inteiro: quem assina precisa conseguir defender cada frase na apresentação oral (10 min + 5 min de perguntas).
 3. Exportar o PDF como **`Germano Augusto Freitas Barbosa.pdf`**.
 4. Submeter pela Even3.

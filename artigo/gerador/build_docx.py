@@ -7,7 +7,7 @@ Uso:
 
 O pacote-base (cabeçalho, rodapé, estilos e margens do modelo oficial) fica em
 modelo/x/ (não versionado). Se não existir, é recriado automaticamente a partir de
-artigo/artigo_edepa_2026_revisado.docx, montado sobre o arquivo-modelo do EDEPA 2026.
+artigo/Germano Augusto Freitas Barbosa.docx, montado sobre o arquivo-modelo do EDEPA 2026.
 O texto do artigo está em conteudo.py.
 """
 import os
@@ -26,7 +26,7 @@ FIG = REPO / "figuras" / "figura1_pipeline.png"
 
 # ANONIMO=1 gera a versão para avaliação cega (sem autoria, link nem metadados)
 ANONIMO = os.environ.get("ANONIMO") == "1"
-OUT = REPO / "artigo" / ("artigo_edepa_2026_anonimo.docx" if ANONIMO else "artigo_edepa_2026_revisado.docx")
+OUT = REPO / "artigo" / ("artigo_edepa_2026_anonimo.docx" if ANONIMO else "Germano Augusto Freitas Barbosa.docx")
 REPO_URL = ("[endereço do repositório omitido para avaliação cega]" if ANONIMO
             else "https://github.com/germanoafb/edepa-devsecops-simplex")
 
@@ -199,7 +199,7 @@ def preparar_base():
     então dele saem o cabeçalho, o rodapé, os estilos e as margens do modelo."""
     if (TPL / "word" / "document.xml").exists():
         return
-    origem = REPO / "artigo" / "artigo_edepa_2026_revisado.docx"
+    origem = REPO / "artigo" / "Germano Augusto Freitas Barbosa.docx"
     TPL.mkdir(parents=True, exist_ok=True)
     with zipfile.ZipFile(origem) as z:
         for nome in z.namelist():

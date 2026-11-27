@@ -14,7 +14,7 @@ Este repositório guarda tudo o que é preciso para **conferir os resultados do 
 |---|---|
 | **Os quadros do Simplex e os cenários de sensibilidade, já calculados** | [`modelo_simplex/saida/relatorio.md`](modelo_simplex/saida/relatorio.md): abre direto no navegador, formatado em tabelas |
 | **Refazer todas as contas você mesmo, no navegador** | [Abrir no Google Colab](https://colab.research.google.com/github/germanoafb/edepa-devsecops-simplex/blob/main/verificar_resultados.ipynb): clique em cada bloco e aperte ▶. Precisa só de uma conta Google |
-| **O artigo** | [`artigo/artigo_edepa_2026_revisado.docx`](artigo/artigo_edepa_2026_revisado.docx) |
+| **O artigo** | [`artigo/Germano Augusto Freitas Barbosa.docx`](artigo/Germano Augusto Freitas Barbosa.docx) |
 | **A apresentação (8 slides, modelo oficial do EDEPA)** | [`apresentacao/`](apresentacao) |
 
 ---
